@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b3b78">
+  <title>Portal Hospitalar do Capão Redondo - RP</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --navy: #071a33;
+      --blue: #0b3b78;
+      --blue-bright: #1769c2;
+      --sky: #79c7ff;
+      --white: #f4f8ff;
+      --muted: #b7c9df;
+      --panel: rgba(12, 39, 73, .86);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      color: var(--white);
+      background:
+        radial-gradient(ellipse at 50% -20%, rgba(42, 131, 221, .42), transparent 55%),
+        linear-gradient(145deg, #061426 0%, #0b2c54 52%, #071a33 100%);
+      display: flex;
+      flex-direction: column;
+    }
+    .topline { height: 5px; background: linear-gradient(90deg, #4faeff, #d9f1ff, #1769c2); }
+    header {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 28px 0;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      border-bottom: 1px solid rgba(190, 222, 255, .18);
+    }
+    .brand-mark {
+      flex: 0 0 52px; height: 52px; display: grid; place-items: center;
+      border: 1px solid rgba(160, 216, 255, .55); border-radius: 14px;
+      background: rgba(36, 116, 193, .2); color: #d8f0ff;
+      font-size: 28px; font-weight: 800;
+    }
+    .brand-name { font-size: 14px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .brand-sub { margin-top: 5px; color: var(--muted); font-size: 12px; letter-spacing: .06em; }
+    main {
+      width: min(1000px, calc(100% - 40px));
+      margin: auto;
+      padding: 66px 0 74px;
+      text-align: center;
+    }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 9px;
+      padding: 8px 13px; border: 1px solid rgba(137, 204, 255, .3);
+      border-radius: 99px; color: #bfe4ff; background: rgba(21, 85, 145, .23);
+      font-size: 11px; font-weight: 800; letter-spacing: .15em; text-transform: uppercase;
+    }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: #65c2ff; box-shadow: 0 0 12px #65c2ff; }
+    h1 { margin: 24px 0 17px; font-size: clamp(34px, 5.4vw, 62px); line-height: 1.06; letter-spacing: -.04em; }
+    h1 span { color: #83cbff; }
+    .intro { max-width: 650px; margin: 0 auto; color: var(--muted); font-size: clamp(15px, 2vw, 18px); line-height: 1.75; }
+    .services { margin: 46px auto 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; text-align: left; max-width: 800px; }
+    .service {
+      position: relative; overflow: hidden; padding: 26px; min-height: 225px;
+      background: var(--panel); border: 1px solid rgba(147, 203, 255, .22);
+      border-radius: 20px; box-shadow: 0 20px 55px rgba(0, 0, 0, .2);
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+    }
+    .service:hover { transform: translateY(-4px); border-color: rgba(147, 203, 255, .55); background: rgba(17, 55, 99, .95); }
+    .service-icon {
+      width: 48px; height: 48px; display: grid; place-items: center; border-radius: 13px;
+      color: #a6dcff; background: rgba(46, 133, 211, .19); border: 1px solid rgba(135, 204, 255, .27);
+      font-size: 25px;
+    }
+    .service h2 { margin: 22px 0 9px; font-size: 21px; }
+    .service p { margin: 0; color: var(--muted); line-height: 1.6; font-size: 14px; }
+    .service a {
+      margin-top: 23px; width: 100%; min-height: 45px; display: flex; align-items: center; justify-content: center;
+      gap: 10px; border-radius: 10px; color: white; text-decoration: none; font-weight: 750; font-size: 14px;
+      background: linear-gradient(100deg, #155eb0, #247fce); border: 1px solid rgba(178, 224, 255, .25);
+      transition: filter .18s ease;
+    }
+    .service a:hover { filter: brightness(1.13); }
+    .service a:focus-visible { outline: 3px solid #a8dcff; outline-offset: 3px; }
+    .notice { margin: 28px auto 0; max-width: 800px; color: #9fb8d4; font-size: 12px; line-height: 1.6; }
+    footer { margin-top: auto; padding: 22px 20px; text-align: center; color: #8da8c8; font-size: 12px; border-top: 1px solid rgba(190, 222, 255, .14); }
+    @media (max-width: 640px) {
+      header { width: calc(100% - 32px); padding: 20px 0; }
+      .brand-mark { flex-basis: 44px; height: 44px; }
+      .brand-name { font-size: 11px; }
+      main { width: calc(100% - 32px); padding: 48px 0 54px; }
+      .services { grid-template-columns: 1fr; gap: 14px; margin-top: 34px; }
+      .service { min-height: auto; padding: 23px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topline" aria-hidden="true"></div>
+  <header>
+    <div class="brand-mark" aria-hidden="true">+</div>
+    <div>
+      <div class="brand-name">Portal Hospitalar</div>
+      <div class="brand-sub">Capão Redondo · Roleplay</div>
+    </div>
+  </header>
+
+  <main>
+    <div class="eyebrow"><span class="dot" aria-hidden="true"></span> Sistema hospitalar · RP</div>
+    <h1>Portal Hospitalar do<br><span>Capão Redondo</span></h1>
+    <p class="intro">Acesse os serviços administrativos hospitalares disponíveis no servidor. Selecione abaixo o documento que deseja preencher.</p>
+
+    <section class="services" aria-label="Serviços hospitalares">
+      <article class="service">
+        <div class="service-icon" aria-hidden="true">▤</div>
+        <h2>Certidão de Óbito</h2>
+        <p>Acesse o formulário para registrar e emitir uma certidão de óbito no ambiente de roleplay.</p>
+        <a href="https://gta-rp-obito.streamlit.app" target="_blank" rel="noopener noreferrer">Acessar formulário <span aria-hidden="true">↗</span></a>
+      </article>
+      <article class="service">
+        <div class="service-icon" aria-hidden="true">✚</div>
+        <h2>Laudo Psicológico</h2>
+        <p>Acesse o formulário para preencher e gerar um laudo psicológico no ambiente de roleplay.</p>
+        <a href="https://gta-rp-psicologico.streamlit.app" target="_blank" rel="noopener noreferrer">Acessar formulário <span aria-hidden="true">↗</span></a>
+      </article>
+    </section>
+
+    <p class="notice">Ambiente fictício para roleplay (RP). Os documentos e registros gerados destinam-se exclusivamente à interpretação dentro do servidor.</p>
+  </main>
+
+  <footer>Portal Hospitalar do Capão Redondo - RP · Ambiente fictício de roleplay</footer>
+</body>
+</html>
